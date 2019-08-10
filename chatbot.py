@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-# coding: utf-8
 
 from question_classifier import *
 from question_parser import *
