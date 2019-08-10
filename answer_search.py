@@ -11,7 +11,7 @@ class AnswerSearcher:
         self.g = Graph(
             host="127.0.0.1",
             http_port=7474,
-            user="neo4j",
+            user="lyf",
             password="lyf123")
         self.num_limit = 20
 
