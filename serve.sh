@@ -1,1 +1,1 @@
-env FLASK_APP=qest_server.py flask run
+env FLASK_APP=qest_server.py flask run --host=0.0.0.0
