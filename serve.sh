@@ -1,0 +1,1 @@
+env FLASK_APP=qest_server.py flask run
