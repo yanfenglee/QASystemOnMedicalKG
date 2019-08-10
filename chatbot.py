@@ -10,7 +10,7 @@ class ChatBot:
         self.searcher = AnswerSearcher()
 
     def ask(self, quest):
-        answer = '您好，我是米喜医药智能助手，请输入医疗相关问题, 如：疾病症状，治疗方法，需检查项目，药品，预防，并发症，病因，饮食禁忌等，若回答不好，请咨询人工助手，祝您身体健康：）'
+        answer = '您好，我是米喜医药智能助手，请输入医疗相关问题, 如：疾病症状，治疗方式，如何预防，需检查项目，用什么药，饮食禁忌，为什么会得，易感人群等，若回答不好，请咨询人工助手，祝您身体健康：）'
         res_classify = self.classifier.classify(quest)
         if not res_classify:
             return answer
