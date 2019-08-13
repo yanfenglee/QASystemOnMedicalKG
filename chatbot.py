@@ -2,7 +2,7 @@
 from question_classifier import *
 from question_parser import *
 from answer_search import *
-import random
+import random,time
 
 jokes = [
     '''  据说，有一位外国朋友，上厕所的时候无聊，拿起一瓶洁厕剂，阅读背面的说明书，居然在里面看到这么一句话：“如果你在阅读本产品的说明书，说明你没带手机，被我猜对了吧？”
@@ -30,10 +30,15 @@ jokes = [
 m = '您好，我是米喜医药智能助手，请输入医疗相关问题, 如：疾病症状，治疗方式，如何预防，需检查项目，用什么药，饮食禁忌，为什么会得，易感人群等'
 default_ans = [m,m,m,m,m,m,m,
     '有点难以回答，让我思考下。。。',
-    '正在进行思考。。。',
-    '我还经验不足，请海涵...',
+    '我还经验不足，回答不了您的问题，请见谅...',
     '您好，这个问题暂时回答不了，请咨询医家人工助手，祝您身体健康：）',
+    '您好，我还在不断成长进化中，期待能更好的回答您的问题，祝您身体健康'
+    '您好，我还在不断成长进化中，期待能更好的回答您的问题，祝您身体健康'
     ''
+]
+
+thinking_time = [
+    0,0,1,1,1,1,1,2,2,2,2,3,3,5
 ]
 
 class ChatBot:
@@ -43,6 +48,8 @@ class ChatBot:
         self.searcher = AnswerSearcher()
 
     def ask(self, quest):
+        time.sleep(thinking_time[random.randrange(len(thinking_time))])
+
         qu = str.strip(quest)
         if qu == '头痛' or qu == '头疼':
             return jokes[random.randrange(len(jokes))]
