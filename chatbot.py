@@ -48,13 +48,15 @@ class ChatBot:
         self.searcher = AnswerSearcher()
 
     def ask(self, quest):
+
+        answer = default_ans[random.randrange(len(default_ans))]
+        
         time.sleep(thinking_time[random.randrange(len(thinking_time))])
 
         qu = str.strip(quest)
         if qu == '头痛' or qu == '头疼':
             return jokes[random.randrange(len(jokes))]
 
-        answer = default_ans[random.randrange(len(default_ans))]
         res_classify = self.classifier.classify(quest)
         if not res_classify:
             return answer
